@@ -8,8 +8,8 @@ form.addEventListener('input', () => {
   const userMessage = form.elements.message.value;
 
   const data = {
-    email: userEmail,
-    message: userMessage,
+    email: userEmail.trim(),
+    message: userMessage.trim(),
   };
 
   saveToLS(STORAGE_KEY, data);
@@ -44,8 +44,8 @@ function saveToLS(key, value) {
 function restoreData() {
   const data = loadFromLS(STORAGE_KEY) || {};
 
-  form.elements.email.value = data.email.trim() || '';
-  form.elements.message.value = data.message.trim() || '';
+  form.elements.email.value = data.email || '';
+  form.elements.message.value = data.message || '';
 }
 
 restoreData();
