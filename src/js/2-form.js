@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'user-data';
+const STORAGE_KEY = 'feedback-form-state';
 
 const form = document.querySelector('.feedback-form');
 const textarea = form.querySelector('textarea');
@@ -44,8 +44,8 @@ function saveToLS(key, value) {
 function restoreData() {
   const data = loadFromLS(STORAGE_KEY) || {};
 
-  form.elements.email.value = data.email || 'Anonymus';
-  form.elements.message.value = data.message || '';
+  form.elements.email.value = data.email.trim() || '';
+  form.elements.message.value = data.message.trim() || '';
 }
 
 restoreData();
