@@ -8,16 +8,26 @@ form.addEventListener('input', () => {
   const userMessage = form.elements.message.value;
 
   const data = {
-    email: userEmail.trim(),
-    message: userMessage.trim(),
+    email: userEmail,
+    message: userMessage,
   };
-
+  
   saveToLS(STORAGE_KEY, data);
 });
 
+
 form.addEventListener('submit', e => {
   e.preventDefault();
+  
+// валідація
+  // const userEmail = form.elements.email.value;
+  // const userMessage = form.elements.message.value;
 
+  // if (userEmail.trim() === '' || userMessage.trim() === '') {
+  //   alert('Будь ласка, заповніть обидва поля форми.');
+  //   return;
+  // }
+  
   const data = loadFromLS(STORAGE_KEY) || {};
   console.log(data);
 
