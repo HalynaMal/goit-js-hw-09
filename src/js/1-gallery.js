@@ -1,3 +1,6 @@
+ import SimpleLightbox from "simplelightbox";
+ import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
     {
       preview:
@@ -77,10 +80,7 @@ const images = [
     galleryList.insertAdjacentHTML('beforeend', markup);
   }
  
-  renderGallery(images);
-
- import SimpleLightbox from "simplelightbox";
- import "simplelightbox/dist/simple-lightbox.min.css";
+  renderGallery();
 
    const lightbox = new SimpleLightbox('.gallery a', {
     captions: true,
