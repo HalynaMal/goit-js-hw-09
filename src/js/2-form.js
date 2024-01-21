@@ -3,6 +3,7 @@ const STORAGE_KEY = 'feedback-form-state';
 const form = document.querySelector('.feedback-form');
 const textarea = form.querySelector('textarea');
 
+
 form.addEventListener('input', () => {
   const userEmail = form.elements.email.value;
   const userMessage = form.elements.message.value;
@@ -18,7 +19,7 @@ form.addEventListener('input', () => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  
+
 // валідація
   // const userEmail = form.elements.email.value;
   // const userMessage = form.elements.message.value;
